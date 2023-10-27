@@ -23,6 +23,7 @@ TimeManager="*res://scripts/manager/time_manager.gd"
 GameManager="*res://scripts/manager/game_manager.gd"
 InputManager="*res://scripts/manager/input_manager.gd"
 BeatManager="*res://scripts/manager/beat_manager.gd"
+HandManager="*res://scripts/manager/hand_manager.gd"
 
 [input]
 

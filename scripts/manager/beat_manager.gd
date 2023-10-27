@@ -1,13 +1,28 @@
 extends Node
 
 var beat = 0
-var bpm = 120
+var bpm = 120.0
+var frequency = 0.0
+var timer = 0.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	update_frequency()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func update_frequency():
+	frequency = (60 / bpm)
+	
+func set_bpm(value):
+	bpm = value
+	update_frequency()
+	
 func _process(delta):
-	pass
+	if(timer >= frequency):
+		new_beat()
+		timer = 0
+	timer+= delta
+	
+func new_beat():
+	beat+= 1
+	HandManager.beat()
+	print(beat)
+	
