@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://ik8756p4owml"]
+[gd_scene load_steps=12 format=3 uid="uid://ik8756p4owml"]
 
 [ext_resource type="Script" path="res://scripts/hand.gd" id="1_q2bxk"]
+[ext_resource type="Texture2D" uid="uid://dsa4hhtq4dq3d" path="res://sprites/hand/hand.png" id="2_agnfb"]
+[ext_resource type="PackedScene" uid="uid://dkpmwy4w6o5xw" path="res://scenes/finger.tscn" id="3_re1fy"]
+[ext_resource type="Texture2D" uid="uid://c0tjnso8tahnq" path="res://sprites/hand/thumbUnfolded.png" id="4_k27tv"]
+[ext_resource type="Texture2D" uid="uid://drxi7y22ve1bb" path="res://sprites/hand/thumbFolded.png" id="5_8mxu0"]
+[ext_resource type="Texture2D" uid="uid://dh3l1jlqhpi32" path="res://sprites/hand/middleUnfolded.png" id="6_3o413"]
+[ext_resource type="Texture2D" uid="uid://ccco1c4oevvqu" path="res://sprites/hand/middleFolded.png" id="7_d778v"]
+[ext_resource type="Texture2D" uid="uid://c0ps1qu83y1ws" path="res://sprites/hand/ringUnfolded.png" id="8_b6o4b"]
+[ext_resource type="Texture2D" uid="uid://c2vnaljk5tqog" path="res://sprites/hand/ringFolded.png" id="9_03yku"]
+[ext_resource type="Texture2D" uid="uid://2r60doi8sr3e" path="res://sprites/hand/pinkyUnfolded.png" id="10_yrc8p"]
+[ext_resource type="Texture2D" uid="uid://ch2oxghtbbnl6" path="res://sprites/hand/pinkyFolded.png" id="11_4l3wr"]
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_q2bxk")
+
+[node name="Sprite" type="Node2D" parent="."]
+scale = Vector2(10, 10)
+
+[node name="Hand" type="Sprite2D" parent="Sprite"]
+texture_filter = 1
+texture = ExtResource("2_agnfb")
+
+[node name="Thumb" parent="Sprite" instance=ExtResource("3_re1fy")]
+texture = ExtResource("4_k27tv")
+folded_texture = ExtResource("5_8mxu0")
+unfolded_texture = ExtResource("4_k27tv")
+
+[node name="Index" parent="Sprite" instance=ExtResource("3_re1fy")]
+scale = Vector2(1, 1)
+
+[node name="Middle" parent="Sprite" instance=ExtResource("3_re1fy")]
+texture = ExtResource("6_3o413")
+folded_texture = ExtResource("7_d778v")
+unfolded_texture = ExtResource("6_3o413")
+
+[node name="Ring" parent="Sprite" instance=ExtResource("3_re1fy")]
+texture = ExtResource("8_b6o4b")
+folded_texture = ExtResource("9_03yku")
+unfolded_texture = ExtResource("8_b6o4b")
+
+[node name="Pinky" parent="Sprite" instance=ExtResource("3_re1fy")]
+texture = ExtResource("10_yrc8p")
+folded_texture = ExtResource("11_4l3wr")
+unfolded_texture = ExtResource("10_yrc8p")

@@ -6,11 +6,13 @@ var enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game = SceneManager.main.get_node("Game")
-	player = game.get_node("Player")
-	enemy = game.get_node("Enemy")
+	player = game.get_node("Hands/Player")
+	enemy = game.get_node("Hands/Enemy")
+	
+func _process(delta):
+	compare(player,enemy)
 	
 func compare(player1,player2):
-	FiguresManager.get_figure(player1)
-	FiguresManager.get_figure(player2)
-	
+	var win_state = FiguresManager.get_winner(player1.figure,player2.figure)
+#	print(win_state)
 	

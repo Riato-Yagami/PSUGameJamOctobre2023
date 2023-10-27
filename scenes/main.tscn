@@ -1,11 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dn0p0nofwg4p5"]
 
-[ext_resource type="PackedScene" uid="uid://ik8756p4owml" path="res://scenes/hand.tscn" id="1_pmusb"]
+[ext_resource type="PackedScene" uid="uid://dwu5kpyfcx1v0" path="res://scenes/game.tscn" id="1_odv1j"]
 
 [node name="Main" type="Node"]
 
-[node name="Game" type="Node" parent="."]
-
-[node name="Player" parent="Game" instance=ExtResource("1_pmusb")]
-
-[node name="Enemy" parent="Game" instance=ExtResource("1_pmusb")]
+[node name="Game" parent="." instance=ExtResource("1_odv1j")]
