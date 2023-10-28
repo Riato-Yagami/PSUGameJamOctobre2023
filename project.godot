@@ -20,12 +20,21 @@ config/icon="res://icon.svg"
 SceneManager="*res://scripts/manager/scene_manager.gd"
 FigureManager="*res://scripts/manager/figure_manager.gd"
 AudioManager="*res://scripts/manager/audio_manager.gd"
-InformationManager="*res://scripts/manager/information_manager.gd"
-HandManager="*res://scripts/manager/hand_manager.gd"
 BeatManager="*res://scripts/manager/beat_manager.gd"
 TimeManager="*res://scripts/manager/time_manager.gd"
 InputManager="*res://scripts/manager/input_manager.gd"
 GameManager="*res://scripts/manager/game_manager.gd"
+InformationManager="*res://scripts/manager/information_manager.gd"
+HandManager="*res://scripts/manager/hand_manager.gd"
+MenuManager="*res://scripts/manager/menu_manager.gd"
+ScoreManager="*res://scripts/manager/score_manager.gd"
+ShakeManager="*res://scripts/manager/shake_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
+window/size/mode=3
 
 [input]
 
@@ -62,6 +71,7 @@ pinky={
 escape={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":4,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 start={

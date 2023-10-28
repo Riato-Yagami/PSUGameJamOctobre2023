@@ -38,10 +38,10 @@ func get_key_index(dictionnary,key):
 		i+=1
 		
 func get_winner(figure1,figure2): # 1 player 1 won ; -1 lost ; 0 draw
-	print(figure1 + " vs " + figure2)
+#	print(figure1 + " vs " + figure2)
 	var figure_index_1 = get_key_index(figures,figure1)
 	var figure_index_2 = get_key_index(figures,figure2)
-	print(str(figure_index_1) + " vs " + str(figure_index_2))
+#	print(str(figure_index_1) + " vs " + str(figure_index_2))
 	
 	if figure_index_1 == null: return -1
 	if figure_index_1 == null: return 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cghjbbl3xcfgo"]
+[gd_scene load_steps=4 format=3 uid="uid://cghjbbl3xcfgo"]
 
 [ext_resource type="Texture2D" uid="uid://chp4j4pk8yjwb" path="res://sprites/pictograms/scroll.png" id="1_oy4sq"]
 [ext_resource type="LabelSettings" uid="uid://ep2gatumibf5" path="res://font/menu_label_settings.tres" id="2_h6ytb"]
+[ext_resource type="PackedScene" uid="uid://ik8756p4owml" path="res://scenes/hand.tscn" id="3_373ga"]
 
 [node name="Menu" type="Node"]
 
@@ -27,3 +28,6 @@ text = "P R E S S   S T A R T
 T O   P L A Y"
 label_settings = ExtResource("2_h6ytb")
 horizontal_alignment = 1
+
+[node name="Hand" parent="." instance=ExtResource("3_373ga")]
+position = Vector2(69, 34)

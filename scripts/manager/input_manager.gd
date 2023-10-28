@@ -8,12 +8,12 @@ func set_player(new_player):
 			
 func _input(event):
 	if event.is_action_released("start"):
-		SceneManager.load_game()
+		SceneManager.start()
 			
 	if event.is_action_released("escape"):
 		SceneManager.quit()
 		
-	if(GameManager.in_game):
+	if(GameManager.in_game or MenuManager.in_menu):
 		finger_input(event)
 		
 func finger_input(event):

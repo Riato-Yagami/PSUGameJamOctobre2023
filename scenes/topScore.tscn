@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://blh85cwxrj3b5"]
+
+[ext_resource type="LabelSettings" uid="uid://dnjt52uu6mc0q" path="res://font/score_label_settings.tres" id="1_mbnn6"]
+[ext_resource type="Script" path="res://scripts/topScore.gd" id="2_jn46b"]
+
+[node name="TopScore" type="Label"]
+text = "999"
+label_settings = ExtResource("1_mbnn6")
+horizontal_alignment = 1
+script = ExtResource("2_jn46b")
+
+[node name="Name" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -127.0
+offset_right = -7.0
+offset_bottom = 40.0
+text = "X X X"
+label_settings = ExtResource("1_mbnn6")
+uppercase = true

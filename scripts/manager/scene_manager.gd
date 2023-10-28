@@ -6,11 +6,10 @@ var game
 
 var game_scene #= preload("res://scenes/game.tscn")
 var menu_scene #= preload("res://scenes/menu.tscn")
+var score_scene
 var scene_node
 
 var web
-
-var in_menu = true
 
 func _ready():
 	if(OS.get_distribution_name() == ""): web = true
@@ -20,21 +19,33 @@ func _ready():
 	
 	game_scene = load("res://scenes/game.tscn")
 	menu_scene = load("res://scenes/menu.tscn")
+	score_scene = load("res://scenes/score.tscn")
+	
 	load_menu()
 
 func quit():
-	if(in_menu): get_tree().quit()
+	if(MenuManager.in_menu): get_tree().quit()
 	else : load_menu()
 
 func load_menu():
-	load_new_scene(menu_scene)
 	GameManager.in_game = false
-	in_menu = true
+	load_new_scene(menu_scene)
+	MenuManager.init()
+#	MenuManager.in_menu = true
 
 func load_game():
+	MenuManager.in_menu = false
 	load_new_scene(game_scene)
 	GameManager.init_game()
-	in_menu = false
+	
+func load_score():
+	GameManager.in_game = false
+	load_new_scene(score_scene)
+	ScoreManager.init()
+	
+func start():
+	if(MenuManager.in_menu): load_game()
+	else: if(ScoreManager.in_score): load_menu()
 	
 
 func load_new_scene(scene):

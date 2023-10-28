@@ -6,10 +6,13 @@ var enemy
 const TOTAL_LIFE = 3
 var life = 3
 
+var half_life = false
+
 var hearts_node
 var round_node
 var round_label
 var round = 0
+
 var in_game = false
 # Called when the node enters the scene tree for the first time.
 
@@ -25,9 +28,13 @@ func init_game():
 	InputManager.set_player(player)
 	HandManager.init()
 	InformationManager.init()
+	BeatManager.init()
 	
 	life = TOTAL_LIFE
+	half_life = false
+	
 	round = 0
+	
 	in_game = true
 #func _process(delta):
 #	compare(player,enemy)
@@ -44,24 +51,37 @@ func confrontation():
 		damage()
 	else: if win == 0:
 		print("Draw")
+		damage(!half_life)
 	else:
 		print("Win")
+		ScoreManager.incr_score()
+		heal()
 
 	if(life == 0):
 		game_over()
 		
-func damage():
-	hearts_node.get_child(life-1).damage()
-	life -= 1
+func damage(half_damage = false):
+	ShakeManager.shake(10.0,0.3)
+	hearts_node.get_child(life-1).damage(half_damage)
+	if(half_damage):
+		half_life = true
+	else:
+		half_life = false
+		life -= 1
+
+func heal():
+	half_life = false
+	hearts_node.get_child(life-1).heal()
 	
 func new_round():
 	round += 1
 	round_label.text = str(round)
 	await TimeManager.sleep_beat()
-	enemy.set_figure("rock")
+	if(in_game): enemy.set_figure("rock")
 	
 func game_over():
-	SceneManager.quit()
+	await TimeManager.sleep_beat(2.0)
+	SceneManager.load_score()
 	
 func compare(player1,player2):
 	var win_state = FigureManager.get_winner(player1.figure,player2.figure)
