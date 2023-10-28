@@ -32,18 +32,22 @@ folded_texture = ExtResource("5_8mxu0")
 unfolded_texture = ExtResource("4_k27tv")
 
 [node name="Index" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
+id = 1
 
 [node name="Middle" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
 texture = ExtResource("6_3o413")
 folded_texture = ExtResource("7_d778v")
 unfolded_texture = ExtResource("6_3o413")
+id = 2
 
 [node name="Ring" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
 texture = ExtResource("8_b6o4b")
 folded_texture = ExtResource("9_03yku")
 unfolded_texture = ExtResource("8_b6o4b")
+id = 3
 
 [node name="Pinky" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
 texture = ExtResource("10_yrc8p")
 folded_texture = ExtResource("11_4l3wr")
 unfolded_texture = ExtResource("10_yrc8p")
+id = 4

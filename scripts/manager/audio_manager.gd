@@ -41,6 +41,11 @@ func play(clip_name, count = 1, time = 0,db = 1):
 	
 	return s
 
+func play_clip(clip, time = 0,db = 1):
+	var s = sound_r.instantiate()
+	sounds_node.add_child(s)
+	s.play_clip(clip, time)
+	
 func mute_music():
 	music_node.volume_db = default_music_volume if isMute else -80
 #	muteButton.texture = muteSprite if isMute else unMuteSprite

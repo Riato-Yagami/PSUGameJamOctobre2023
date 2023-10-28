@@ -31,10 +31,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -884.0
-offset_top = -535.0
-offset_right = -884.0
-offset_bottom = -535.0
+offset_left = -513.0
+offset_top = -353.0
+offset_right = -513.0
+offset_bottom = -353.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(852, 88)
@@ -44,10 +44,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -53.0
-offset_top = 25.0
-offset_right = -53.0
-offset_bottom = 25.0
+offset_left = -114.0
+offset_top = 72.0
+offset_right = -114.0
+offset_bottom = 72.0
 grow_horizontal = 2
 
 [node name="Hand" parent="Control/Information" instance=ExtResource("1_1xup8")]
@@ -78,11 +78,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_vm1o3")
 
 [node name="Hearts" type="GridContainer" parent="Control"]
-layout_mode = 1
-offset_left = 278.0
-offset_top = 7.0
-offset_right = 382.0
-offset_bottom = 47.0
+layout_mode = 0
+offset_left = -46.0
+offset_right = 58.0
+offset_bottom = 40.0
 scale = Vector2(5, 5)
 columns = 3
 
@@ -96,10 +95,15 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Round" type="Control" parent="Control"]
-anchors_preset = 0
-offset_left = 1267.0
-offset_right = 1307.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -239.0
+offset_top = 7.0
+offset_right = -199.0
+offset_bottom = 47.0
+grow_horizontal = 0
 
 [node name="Count" type="Label" parent="Control/Round"]
 layout_mode = 0
