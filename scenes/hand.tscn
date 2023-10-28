@@ -32,7 +32,6 @@ folded_texture = ExtResource("5_8mxu0")
 unfolded_texture = ExtResource("4_k27tv")
 
 [node name="Index" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
-scale = Vector2(1, 1)
 
 [node name="Middle" parent="Anchor/Sprite" instance=ExtResource("3_re1fy")]
 texture = ExtResource("6_3o413")

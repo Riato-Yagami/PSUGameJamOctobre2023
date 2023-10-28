@@ -1,18 +1,120 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwu5kpyfcx1v0"]
+[gd_scene load_steps=8 format=3 uid="uid://dwu5kpyfcx1v0"]
 
 [ext_resource type="PackedScene" uid="uid://ik8756p4owml" path="res://scenes/hand.tscn" id="1_1xup8"]
+[ext_resource type="PackedScene" uid="uid://bad213sob0vs" path="res://scenes/heart.tscn" id="2_675b2"]
+[ext_resource type="FontFile" uid="uid://b24ukui1wgw4e" path="res://font/c-carre-4px.ttf" id="3_jl08y"]
+[ext_resource type="Texture2D" uid="uid://cutdm2mo26les" path="res://sprites/pictograms/nTurnsAway.png" id="3_vm1o3"]
+[ext_resource type="Texture2D" uid="uid://nel0o1fnd02x" path="res://sprites/pictograms/bell.png" id="3_y1be2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0v0v8"]
+font = ExtResource("3_jl08y")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_280h7"]
+font = ExtResource("3_jl08y")
+font_size = 60
 
 [node name="Game" type="Node"]
 
 [node name="Hands" type="Node2D" parent="."]
-position = Vector2(-1.52588e-05, 0)
+position = Vector2(0, 100)
 
 [node name="Player" parent="Hands" instance=ExtResource("1_1xup8")]
 position = Vector2(340, 0)
-scale = Vector2(1, 1)
 
 [node name="Enemy" parent="Hands" instance=ExtResource("1_1xup8")]
 position = Vector2(-350, 0)
 scale = Vector2(-1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_top = -323.0
+offset_right = -575.0
+offset_bottom = -323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Information" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 25.0
+offset_right = -53.0
+offset_bottom = 25.0
+grow_horizontal = 2
+
+[node name="Hand" parent="Control/Information" instance=ExtResource("1_1xup8")]
+position = Vector2(120, 64)
+rotation = 3.14159
+scale = Vector2(0.215, -0.215)
+
+[node name="Label" type="Label" parent="Control/Information"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_top = 16.0
+offset_right = 133.0
+offset_bottom = 102.0
+grow_horizontal = 2
+text = "I N F O"
+label_settings = SubResource("LabelSettings_0v0v8")
+horizontal_alignment = 1
+
+[node name="Pictogram" type="TextureRect" parent="Control/Information"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_vm1o3")
+
+[node name="Hearts" type="GridContainer" parent="Control"]
+layout_mode = 1
+offset_right = 104.0
+offset_bottom = 40.0
+scale = Vector2(5, 5)
+columns = 3
+
+[node name="Heart" parent="Control/Hearts" instance=ExtResource("2_675b2")]
+layout_mode = 2
+
+[node name="Heart2" parent="Control/Hearts" instance=ExtResource("2_675b2")]
+layout_mode = 2
+
+[node name="Heart3" parent="Control/Hearts" instance=ExtResource("2_675b2")]
+layout_mode = 2
+
+[node name="Round" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 953.0
+offset_right = 993.0
+offset_bottom = 40.0
+
+[node name="Count" type="Label" parent="Control/Round"]
+layout_mode = 0
+offset_left = -143.0
+offset_top = 12.0
+offset_right = 97.0
+offset_bottom = 98.0
+text = "0"
+label_settings = SubResource("LabelSettings_280h7")
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Round"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 8.0
+offset_right = 149.0
+offset_bottom = 48.0
+scale = Vector2(1.67, 1.67)
+texture = ExtResource("3_y1be2")

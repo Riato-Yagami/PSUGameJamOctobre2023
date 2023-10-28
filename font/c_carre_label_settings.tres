@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://y80dss58px6p"]
+
+[ext_resource type="FontFile" uid="uid://b24ukui1wgw4e" path="res://font/c-carre-4px.ttf" id="1_s7vj7"]
+
+[resource]
+font = ExtResource("1_s7vj7")
+font_size = 60

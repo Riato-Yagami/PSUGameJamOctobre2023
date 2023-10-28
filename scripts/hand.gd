@@ -1,15 +1,20 @@
 extends Node2D
 
 var figure = "unmatch"
-var default_rotation = -45.0
+var default_rotation = 250
 var beat_rotation = -105.0
+var pause_beat_rotation = -50
 var rotation_position = 1.0
+var beat_pause = false
+
+var rotation_speed = 3
+
 var fingers = {
-	"thumb" : false, 
-	"index" : false,
-	"middle" : false,
-	"ring" : false,
-	"pinky" : false
+	"thumb" : true, 
+	"index" : true,
+	"middle" : true,
+	"ring" : true,
+	"pinky" : true
 }
 
 @onready var finger_nodes = {
@@ -23,7 +28,8 @@ var fingers = {
 @onready var anchor = $Anchor
 
 func _ready():
-	figure = FiguresManager.get_figure(fingers)
+	figure = FigureManager.get_figure(fingers)
+	set_figure(figure)
 	
 func _process(delta):
 	restore_rotation(delta)
@@ -31,19 +37,31 @@ func _process(delta):
 func fold(finger):
 	fingers[finger] = true
 	finger_nodes[finger].fold()
-	figure = FiguresManager.get_figure(fingers)
+	figure = FigureManager.get_figure(fingers)
 	
 func unfold(finger):
 	fingers[finger] = false
 	finger_nodes[finger].unfold()
-	figure = FiguresManager.get_figure(fingers)
+	figure = FigureManager.get_figure(fingers)
 	
-func beat():
+func beat(pause = false):
+	beat_pause = pause
 	anchor.rotation = deg_to_rad(beat_rotation)
 	rotation_position = 0
 	
 func restore_rotation(delta):
-	if(rotation_position > 1): return
-	rotation_position += delta
+	if(rotation_position > 1 or beat_pause): return
+	rotation_position += delta * rotation_speed * AudioManager.get_speed_factor()
 	anchor.rotation = lerp(anchor.rotation, deg_to_rad(default_rotation), deg_to_rad(rotation_position))
+
+func set_figure(new_figure):
+	figure = new_figure
+	var new_fingers = FigureManager.get_fingers(figure)
+	
+	var finger_index = 0
+	for finger in fingers:
+		if new_fingers[finger_index]: fold(finger)
+		else: unfold(finger)
+		finger_index+=1
+		
 	

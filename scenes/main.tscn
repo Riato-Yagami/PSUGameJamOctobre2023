@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn0p0nofwg4p5"]
+[gd_scene load_steps=3 format=3 uid="uid://der1qxqfnfaxf"]
 
 [ext_resource type="PackedScene" uid="uid://dwu5kpyfcx1v0" path="res://scenes/game.tscn" id="1_odv1j"]
+[ext_resource type="PackedScene" uid="uid://d2d0dn17w3wxy" path="res://scenes/audio.tscn" id="2_lkmck"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
 
 [node name="Game" parent="." instance=ExtResource("1_odv1j")]
+
+[node name="Audio" parent="." instance=ExtResource("2_lkmck")]

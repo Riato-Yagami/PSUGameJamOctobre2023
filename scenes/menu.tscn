@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cghjbbl3xcfgo"]
+
+[ext_resource type="Texture2D" uid="uid://chp4j4pk8yjwb" path="res://sprites/pictograms/scroll.png" id="1_oy4sq"]
+[ext_resource type="LabelSettings" uid="uid://ep2gatumibf5" path="res://font/menu_label_settings.tres" id="2_h6ytb"]
+
+[node name="Menu" type="Node"]
+
+[node name="Pictograms" type="Node2D" parent="."]
+scale = Vector2(9, 9)
+
+[node name="Background" type="Sprite2D" parent="Pictograms"]
+texture = ExtResource("1_oy4sq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -536.0
+offset_top = 142.0
+offset_right = 514.0
+offset_bottom = 294.0
+text = "P R E S S   S T A R T   
+T O   P L A Y"
+label_settings = ExtResource("2_h6ytb")
+horizontal_alignment = 1
