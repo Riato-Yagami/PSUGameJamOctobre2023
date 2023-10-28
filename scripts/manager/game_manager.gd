@@ -88,11 +88,13 @@ func new_round():
 	
 func game_over():
 	in_game = false
+	await TimeManager.sleep_beat(2.0)
 	SceneManager.main.get_node("Background/Video").play()
 	var colorRect = SceneManager.main.get_node("Background/ColorRect")
 	colorRect.modulate = Color(0,0,0,0)
 	game.get_node("Hands").visible = false
 	await TimeManager.sleep_beat(1.0)
+	
 	AudioManager.play("glass/glassBreak1")
 	await TimeManager.sleep_beat(4.0)
 	SceneManager.load_score()

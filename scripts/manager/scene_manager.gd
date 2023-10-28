@@ -25,7 +25,8 @@ func _ready():
 
 func quit():
 	if(MenuManager.in_menu): get_tree().quit()
-	else : load_menu()
+	else : if(ScoreManager.in_score and !ScoreManager.name_entered): return
+	load_menu()
 
 func load_menu():
 	GameManager.in_game = false
@@ -45,9 +46,8 @@ func load_score():
 	
 func start():
 	if(MenuManager.in_menu): load_game()
-	else: if(ScoreManager.in_score): load_menu()
+	else: if(ScoreManager.in_score and ScoreManager.name_entered): load_menu()
 	
-
 func load_new_scene(scene):
 	var node = scene.instantiate()
 	remove_old_scenes()

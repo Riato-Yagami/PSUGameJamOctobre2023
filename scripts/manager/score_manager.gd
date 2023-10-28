@@ -10,6 +10,8 @@ var top_score_scene
 var name_node
 var player_name = ""
 var reset_scores = false
+var start_text_node
+var name_entered = false
 
 func incr_score():
 	score += 1
@@ -17,6 +19,7 @@ func incr_score():
 	BeatManager.increase_bpm()
 
 func reset():
+	name_entered = false
 	score = 0
 	
 func init():
@@ -27,7 +30,7 @@ func init():
 	new_score_label = score_node.get_node("Control/NewScore")
 	top_node = score_node.get_node("Control/Top/TopGrid")
 	top_score_scene = load("res://scenes/topScore.tscn")
-	
+	start_text_node = score_node.get_node("Control/StartText")
 	new_score_label.text = str(score)
 	in_score = true
 	if(reset_scores): delete_save()
@@ -42,6 +45,8 @@ func _input(event):
 			if(key_text == "Enter" and player_name.length() >= 6):
 				save_new_score()
 				set_top()
+				name_entered = true
+				start_text_node.visible = true
 			else: if(name_node.text.length() < 6 and key_text.length() == 1):
 				player_name += key_text + " "
 			name_node.text = player_name

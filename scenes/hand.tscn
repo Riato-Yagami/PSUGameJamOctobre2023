@@ -25,7 +25,7 @@ texture = ExtResource("12_ipucp")
 
 [node name="Crown" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-63, -263)
+position = Vector2(-63, -220)
 scale = Vector2(5.03, 5.03)
 texture = ExtResource("3_2g4oj")
 
