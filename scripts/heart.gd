@@ -16,6 +16,7 @@ func damage(half_damage = false):
 		return
 	texture_node.texture = broken
 	ShakeManager.shake(2.0,0.3)
+	AudioManager.play("heartBreak")
 	
 	await TimeManager.sleep_beat()
 	texture_node.texture = empty

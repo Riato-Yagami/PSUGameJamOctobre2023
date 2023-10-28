@@ -15,11 +15,12 @@ func incr_score():
 	score += 1
 	await TimeManager.sleep_beat(2.0)
 	BeatManager.increase_bpm()
+	
 func init():
 	score_node = SceneManager.scene_node.get_node("Score")
 	
 #	score = GameManager.round - 3
-	
+	score = 0
 	new_score_label = score_node.get_node("Control/NewScore")
 	top_node = score_node.get_node("Control/Top")
 	top_score_scene = load("res://scenes/topScore.tscn")

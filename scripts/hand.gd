@@ -32,7 +32,7 @@ func _ready():
 	set_figure(figure)
 	
 func _process(delta):
-	restore_rotation(delta)
+	if(GameManager.in_game): restore_rotation(delta)
 
 func fold(finger):
 	fingers[finger] = true

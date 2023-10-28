@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://der1qxqfnfaxf"]
+[gd_scene load_steps=8 format=3 uid="uid://der1qxqfnfaxf"]
 
 [ext_resource type="PackedScene" uid="uid://d2d0dn17w3wxy" path="res://scenes/audio.tscn" id="2_lkmck"]
+[ext_resource type="VideoStream" path="res://video/0001-0250.ogv" id="2_p1qij"]
+[ext_resource type="Texture2D" uid="uid://ci7c8qdimtljk" path="res://sprites/background.png" id="3_lk8er"]
+[ext_resource type="Script" path="res://scripts/color_rect.gd" id="4_q8hkr"]
+
+[sub_resource type="Gradient" id="Gradient_l8pkm"]
+offsets = PackedFloat32Array(0, 0.195266, 0.994083, 1)
+colors = PackedColorArray(0, 0, 0, 0.4, 0.180252, 0.180252, 0.180252, 0.809734, 0.917647, 0.917647, 0.917647, 0.0313726, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r8ey7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3bpd6"]
+width = 1080
+height = 720
+color_ramp = SubResource("Gradient_l8pkm")
+noise = SubResource("FastNoiseLite_r8ey7")
 
 [node name="Main" type="Node2D"]
 
@@ -9,3 +24,54 @@
 [node name="Audio" parent="." instance=ExtResource("2_lkmck")]
 
 [node name="Camera" type="Camera2D" parent="."]
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.16, 1.16)
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.62536e-05
+offset_top = -2.81268e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lk8er")
+
+[node name="Video" type="VideoStreamPlayer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -544.828
+offset_top = -358.621
+offset_right = 543.172
+offset_bottom = 361.379
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_p1qij")
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+visible = false
+layout_mode = 0
+offset_left = -541.014
+offset_top = -363.134
+offset_right = 538.986
+offset_bottom = 356.866
+texture = SubResource("NoiseTexture2D_3bpd6")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -541.379
+offset_top = -360.345
+offset_right = 538.621
+offset_bottom = 359.655
+color = Color(0.137255, 0.141176, 0.0901961, 1)
+script = ExtResource("4_q8hkr")

@@ -29,6 +29,7 @@ func init_game():
 	HandManager.init()
 	InformationManager.init()
 	BeatManager.init()
+	AudioManager.start_game_music()
 	
 	life = TOTAL_LIFE
 	half_life = false
@@ -48,12 +49,15 @@ func confrontation():
 	
 	if win == -1:
 		print("Lose")
+		AudioManager.play("roundLoss1")
 		damage()
 	else: if win == 0:
 		print("Draw")
+		AudioManager.play("roundLoss2")
 		damage(!half_life)
 	else:
 		print("Win")
+		AudioManager.play("roundWin")
 		ScoreManager.incr_score()
 		heal()
 
@@ -80,7 +84,14 @@ func new_round():
 	if(in_game): enemy.set_figure("rock")
 	
 func game_over():
-	await TimeManager.sleep_beat(2.0)
+	in_game = false
+	SceneManager.main.get_node("Background/Video").play()
+	var colorRect = SceneManager.main.get_node("Background/ColorRect")
+	colorRect.color = Color(0,0,0,0)
+	game.get_node("Hands").visible = false
+	await TimeManager.sleep_beat(1.0)
+	AudioManager.play("glassBreak")
+	await TimeManager.sleep_beat(4.0)
 	SceneManager.load_score()
 	
 func compare(player1,player2):

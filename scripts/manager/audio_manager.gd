@@ -12,7 +12,7 @@ var music_bus
 var music_pitch_effect
 
 var music = preload("res://audio/music/OST_1_120.wav")
-var musicBPM = 120.0
+var musicBPM = 120
 
 func _ready():
 	music_bus = AudioServer.get_bus_index("Music")
@@ -22,7 +22,6 @@ func _ready():
 	sounds_node = audio_node.get_node("Sounds")
 	music_node  = audio_node.get_node("Music")
 	default_music_volume = music_node.volume_db
-	start_game_music()
 	
 func play(clip_name, count = 1, time = 0,db = 1):
 	var s = sound_r.instantiate()

@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cghjbbl3xcfgo"]
+[gd_scene load_steps=9 format=3 uid="uid://cghjbbl3xcfgo"]
 
 [ext_resource type="Texture2D" uid="uid://chp4j4pk8yjwb" path="res://sprites/pictograms/scroll.png" id="1_oy4sq"]
 [ext_resource type="LabelSettings" uid="uid://ep2gatumibf5" path="res://font/menu_label_settings.tres" id="2_h6ytb"]
 [ext_resource type="PackedScene" uid="uid://ik8756p4owml" path="res://scenes/hand.tscn" id="3_373ga"]
+[ext_resource type="Texture2D" uid="uid://daj7ec5kj4mat" path="res://sprites/buttons/A.png" id="4_nc7t4"]
+[ext_resource type="Texture2D" uid="uid://dn80sma3kxoeu" path="res://sprites/buttons/LB.png" id="5_2sfca"]
+[ext_resource type="Texture2D" uid="uid://kc8an7rh77kc" path="res://sprites/buttons/LT.png" id="6_0phan"]
+[ext_resource type="Texture2D" uid="uid://dxuhqua0tx2ot" path="res://sprites/buttons/RB.png" id="7_eck0i"]
+[ext_resource type="Texture2D" uid="uid://b3y6lebwn5xy2" path="res://sprites/buttons/RT.png" id="8_vqft8"]
 
 [node name="Menu" type="Node"]
 
@@ -15,8 +20,9 @@ texture = ExtResource("1_oy4sq")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 19.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 59.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -30,4 +36,30 @@ label_settings = ExtResource("2_h6ytb")
 horizontal_alignment = 1
 
 [node name="Hand" parent="." instance=ExtResource("3_373ga")]
-position = Vector2(69, 34)
+position = Vector2(92, 53)
+scale = Vector2(1.13, 1.13)
+
+[node name="Buttons" type="Node2D" parent="Hand"]
+position = Vector2(-68, -55)
+rotation = -0.767945
+scale = Vector2(1.33, 1.33)
+
+[node name="A" type="Sprite2D" parent="Hand/Buttons"]
+position = Vector2(52.0635, 0)
+texture = ExtResource("4_nc7t4")
+
+[node name="Rb" type="Sprite2D" parent="Hand/Buttons"]
+position = Vector2(16.5079, 0)
+texture = ExtResource("7_eck0i")
+
+[node name="Rt" type="Sprite2D" parent="Hand/Buttons"]
+position = Vector2(-13.9683, 0)
+texture = ExtResource("8_vqft8")
+
+[node name="Lb" type="Sprite2D" parent="Hand/Buttons"]
+position = Vector2(-45.0794, 0)
+texture = ExtResource("5_2sfca")
+
+[node name="Lt" type="Sprite2D" parent="Hand/Buttons"]
+position = Vector2(-74.9206, 0)
+texture = ExtResource("6_0phan")
