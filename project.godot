@@ -20,9 +20,12 @@ config/icon="res://icon.svg"
 SceneManager="*res://scripts/manager/scene_manager.gd"
 FigureManager="*res://scripts/manager/figure_manager.gd"
 AudioManager="*res://scripts/manager/audio_manager.gd"
+InformationManager="*res://scripts/manager/information_manager.gd"
+HandManager="*res://scripts/manager/hand_manager.gd"
 BeatManager="*res://scripts/manager/beat_manager.gd"
 TimeManager="*res://scripts/manager/time_manager.gd"
 InputManager="*res://scripts/manager/input_manager.gd"
+GameManager="*res://scripts/manager/game_manager.gd"
 
 [input]
 

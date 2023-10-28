@@ -4,7 +4,7 @@ var information_node
 var label
 var information_hand
 
-func _ready():
+func init():
 	information_node = GameManager.game.get_node("Control/Information")
 	label = information_node.get_node("Label")
 	information_hand = information_node.get_node("Hand")

@@ -3,7 +3,7 @@ extends Node
 var player
 var enemy
 
-func _ready():
+func init():
 	player = GameManager.game.get_node("Hands/Player")
 	enemy = GameManager.game.get_node("Hands/Enemy")
 	

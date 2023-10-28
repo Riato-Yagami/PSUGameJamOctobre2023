@@ -10,6 +10,8 @@ var scene_node
 
 var web
 
+var in_menu = true
+
 func _ready():
 	if(OS.get_distribution_name() == ""): web = true
 	root = get_tree().root
@@ -21,13 +23,19 @@ func _ready():
 	load_menu()
 
 func quit():
-	get_tree().quit()
+	if(in_menu): get_tree().quit()
+	else : load_menu()
 
 func load_menu():
 	load_new_scene(menu_scene)
+	GameManager.in_game = false
+	in_menu = true
 
 func load_game():
 	load_new_scene(game_scene)
+	GameManager.init_game()
+	in_menu = false
+	
 
 func load_new_scene(scene):
 	var node = scene.instantiate()

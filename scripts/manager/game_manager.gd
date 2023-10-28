@@ -3,15 +3,18 @@ extends Node
 var game
 var player
 var enemy
+const TOTAL_LIFE = 3
 var life = 3
 
 var hearts_node
 var round_node
 var round_label
 var round = 0
+var in_game = false
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	game = SceneManager.main.get_node("Game")
+
+func init_game():
+	game = SceneManager.main.get_node("Scene/Game")
 	player = game.get_node("Hands/Player")
 	enemy = game.get_node("Hands/Enemy")
 	hearts_node = game.get_node("Control/Hearts")
@@ -19,8 +22,13 @@ func _ready():
 	round_label = round_node.get_node("Count")
 	
 	FigureManager.generate_enemy_figures()
-	InputManager.set_player()
+	InputManager.set_player(player)
+	HandManager.init()
+	InformationManager.init()
 	
+	life = TOTAL_LIFE
+	round = 0
+	in_game = true
 #func _process(delta):
 #	compare(player,enemy)
 

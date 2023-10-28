@@ -3,8 +3,8 @@ extends Node
 var player
 var fingers = ["thumb","index","middle","ring","pinky"]
 
-#func set_player():
-#	player = GameManager.player
+func set_player(new_player):
+	player = new_player
 			
 func _input(event):
 	for finger in fingers:
@@ -16,5 +16,5 @@ func _input(event):
 	if event.is_action_released("start"):
 		SceneManager.load_game()
 			
-	if event.is_action_released("quit"):
+	if event.is_action_released("escape"):
 		SceneManager.quit()

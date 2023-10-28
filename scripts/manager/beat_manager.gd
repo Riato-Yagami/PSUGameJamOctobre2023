@@ -18,26 +18,26 @@ func set_bpm(value):
 	update_frequency()
 	AudioManager.update_music_speed()
 	
-#func _process(delta):
-#	if(timer >= frequency):
-#		new_beat()
-#		timer = 0
-#	timer+= delta
-#
-#func new_beat():
-#	var phase = beat % 6
-#	if phase == 0:
-#		InformationManager.show()
-#		GameManager.new_round()
-#	if phase == 2:
-#		InformationManager.hide()
-#	if phase == 3:
-#		GameManager.confrontation()
-#
-#	var pause = (phase >= 3)
-#	HandManager.beat(pause)
-#
-#	beat+= 1
+func _process(delta):
+	if(timer >= frequency and GameManager.in_game):
+		new_beat()
+		timer = 0
+	timer+= delta
+
+func new_beat():
+	var phase = beat % 6
+	if phase == 0:
+		InformationManager.show()
+		GameManager.new_round()
+	if phase == 2:
+		InformationManager.hide()
+	if phase == 3:
+		GameManager.confrontation()
+
+	var pause = (phase >= 3)
+	HandManager.beat(pause)
+
+	beat+= 1
 	
 
 	
