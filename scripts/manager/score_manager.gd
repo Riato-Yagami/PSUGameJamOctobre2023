@@ -35,7 +35,6 @@ func init():
 	in_score = true
 	if(reset_scores): delete_save()
 	
-	
 func _input(event):
 	if(in_score and !name_entered):
 		if event is InputEventKey and event.is_pressed():

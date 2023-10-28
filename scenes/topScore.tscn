@@ -4,6 +4,9 @@
 [ext_resource type="Script" path="res://scripts/top_score.gd" id="2_qpw8i"]
 
 [node name="TopScore" type="Label"]
+offset_left = 96.0
+offset_right = 186.0
+offset_bottom = 33.0
 text = "999"
 label_settings = ExtResource("1_mbnn6")
 horizontal_alignment = 1
@@ -12,8 +15,10 @@ script = ExtResource("2_qpw8i")
 [node name="Name" type="Label" parent="."]
 custom_minimum_size = Vector2(2000, 0)
 layout_mode = 0
-offset_left = -127.0
-offset_right = -7.0
-offset_bottom = 40.0
+offset_left = -199.0
+offset_top = -1.0
+offset_right = 1801.0
+offset_bottom = 39.0
+text = "X X X"
 label_settings = ExtResource("1_mbnn6")
 uppercase = true
