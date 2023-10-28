@@ -26,8 +26,6 @@ position = Vector2(340, 0)
 position = Vector2(-350, 0)
 scale = Vector2(-1, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
