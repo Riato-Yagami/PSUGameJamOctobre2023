@@ -41,14 +41,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -114.0
-offset_top = 72.0
-offset_right = -114.0
-offset_bottom = 72.0
+offset_left = -120.0
+offset_top = 74.0
+offset_right = -120.0
+offset_bottom = 74.0
 grow_horizontal = 2
+scale = Vector2(1.435, 1.435)
 
 [node name="Hand" parent="Control/Information" instance=ExtResource("1_1xup8")]
-position = Vector2(120, 64)
+position = Vector2(114.286, 52.2648)
 rotation = 3.14159
 scale = Vector2(0.215, -0.215)
 

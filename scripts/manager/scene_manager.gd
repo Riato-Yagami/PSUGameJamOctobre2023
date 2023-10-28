@@ -29,6 +29,7 @@ func quit():
 	load_menu()
 
 func load_menu():
+	ScoreManager.in_score = false
 	GameManager.in_game = false
 	load_new_scene(menu_scene)
 	MenuManager.init()

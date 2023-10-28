@@ -51,15 +51,19 @@ func confrontation():
 	if win == -1:
 #		print("Lose")
 		enemy.win()
+		player.lost()
 		AudioManager.play("roundLoss1")
 		damage()
 	else: if win == 0:
 #		print("Draw")
+		enemy.lost()
+		player.lost()
 		AudioManager.play("roundLoss2")
 		damage(!half_life)
 	else:
 #		print("Win")
 		player.win()
+		enemy.lost()
 		AudioManager.play("roundWin",0,40)
 		ScoreManager.incr_score()
 		heal()

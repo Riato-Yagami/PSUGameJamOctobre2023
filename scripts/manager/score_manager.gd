@@ -37,7 +37,7 @@ func init():
 	
 	
 func _input(event):
-	if(in_score):
+	if(in_score and !name_entered):
 		if event is InputEventKey and event.is_pressed():
 			var key_text = OS.get_keycode_string(event.keycode)
 			if(key_text == "Backspace"):
@@ -60,7 +60,7 @@ func save_new_score():
 	if(scores == ""): scores = new_score
 	else: scores += ";" + new_score
 	
-#	print(scores)
+	print(scores)
 	save(scores)
 	
 func load_scores():
@@ -84,10 +84,13 @@ func set_top():
 	scores_matrix.sort_custom(custom_sort)
 	scores_matrix.reverse()
 #	print(scores_matrix)
-	
+	var top_str = ""
 	for i in range(min(7,scores_matrix.size())):
 		if(int(scores_matrix[i][1]) > 0):
+			top_str += scores_matrix[i][0] + "," + scores_matrix[i][1] + ";"
 			add_top(scores_matrix[i])
+	print(top_str)
+	save(top_str.substr(0,top_str.length()-1))
 
 #var save_path = "user://save/score.txt"
 func array_to_string(arr: Array) -> String:

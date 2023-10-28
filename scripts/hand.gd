@@ -31,6 +31,12 @@ var fingers = {
 
 const FADE_SPEED = 0.2
 
+func lost():
+	anchor.modulate = Color(0.6,0.6,0.6)
+	await TimeManager.sleep_beat(1)
+	anchor.modulate = Color(0.8,0.8,0.8)
+	await TimeManager.sleep_beat(1)
+	anchor.modulate = Color(1,1,1)
 func win():
 	crown.visible = true
 	await TimeManager.sleep_beat(2)
