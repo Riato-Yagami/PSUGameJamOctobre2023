@@ -30,6 +30,7 @@ func init_game():
 	InformationManager.init()
 	BeatManager.init()
 	AudioManager.start_game_music()
+	ScoreManager.reset()
 	
 	life = TOTAL_LIFE
 	half_life = false
@@ -90,7 +91,7 @@ func game_over():
 	colorRect.color = Color(0,0,0,0)
 	game.get_node("Hands").visible = false
 	await TimeManager.sleep_beat(1.0)
-	AudioManager.play("glassBreak")
+	AudioManager.play("glass/glassBreak1")
 	await TimeManager.sleep_beat(4.0)
 	SceneManager.load_score()
 	

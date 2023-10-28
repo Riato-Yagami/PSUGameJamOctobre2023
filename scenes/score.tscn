@@ -18,6 +18,14 @@ offset_top = -275.0
 offset_right = 267.0
 offset_bottom = 280.0
 
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 194.0
+offset_right = 335.0
+offset_bottom = 234.0
+label_settings = ExtResource("2_v5b1e")
+
 [node name="NewScore" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 10
@@ -41,17 +49,6 @@ text = "S C O R E"
 label_settings = ExtResource("2_v5b1e")
 horizontal_alignment = 1
 
-[node name="TopText" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 141.0
-offset_bottom = 192.0
-grow_horizontal = 2
-text = "T O P"
-label_settings = ExtResource("2_v5b1e")
-horizontal_alignment = 1
-
 [node name="StartText" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 10
@@ -64,9 +61,44 @@ F O R  M E N U"
 label_settings = ExtResource("3_p7fo1")
 horizontal_alignment = 1
 
-[node name="Top" type="GridContainer" parent="Control"]
+[node name="Top" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -39.0
+offset_right = -7.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText" type="Label" parent="Control/Top"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 131.0
+offset_right = 83.0
+offset_bottom = 182.0
+grow_horizontal = 2
+text = "T O P"
+label_settings = ExtResource("2_v5b1e")
+horizontal_alignment = 1
+
+[node name="TopGrid" type="GridContainer" parent="Control/Top"]
 layout_mode = 0
 offset_left = 295.0
 offset_top = 188.0
 offset_right = 385.0
 offset_bottom = 228.0
+
+[node name="EnterName" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 142.0
+offset_right = 489.0
+offset_bottom = 182.0
+text = "E N T E R  N A M E"
+label_settings = ExtResource("2_v5b1e")

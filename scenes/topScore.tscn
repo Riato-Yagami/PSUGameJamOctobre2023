@@ -10,11 +10,10 @@ horizontal_alignment = 1
 script = ExtResource("2_qpw8i")
 
 [node name="Name" type="Label" parent="."]
-visible = false
+custom_minimum_size = Vector2(2000, 0)
 layout_mode = 0
 offset_left = -127.0
 offset_right = -7.0
 offset_bottom = 40.0
-text = "X X X"
 label_settings = ExtResource("1_mbnn6")
 uppercase = true

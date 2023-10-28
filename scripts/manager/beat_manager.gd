@@ -3,7 +3,7 @@ extends Node
 var beat = 0
 const FIRST_BEAT = 4
 
-const INITIAL_BPM = 120.0
+const INITIAL_BPM = 1200.0
 var bpm_acceleration = 10
 var bpm = 120.0
 var frequency = 0.0
