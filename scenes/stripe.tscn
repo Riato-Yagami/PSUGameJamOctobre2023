@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crcqcswxv35mc"]
+
+[ext_resource type="Texture2D" uid="uid://ds4uh17lyey5k" path="res://sprites/stripe.png" id="1_cm1ca"]
+
+[node name="Stripe" type="TextureRect"]
+offset_right = 1080.0
+offset_bottom = 720.0
+scale = Vector2(20, 20)
+texture = ExtResource("1_cm1ca")
+stretch_mode = 2

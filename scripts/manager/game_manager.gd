@@ -38,8 +38,8 @@ func init_game():
 	round = 0
 	
 	in_game = true
-#func _process(delta):
-#	compare(player,enemy)
+	
+	player.show_player_sprite()
 
 func confrontation():
 	var enemy_figure = FigureManager.get_enemy_figure(round)
@@ -49,16 +49,18 @@ func confrontation():
 #	print(win)
 	
 	if win == -1:
-		print("Lose")
+#		print("Lose")
+		enemy.win()
 		AudioManager.play("roundLoss1")
 		damage()
 	else: if win == 0:
-		print("Draw")
+#		print("Draw")
 		AudioManager.play("roundLoss2")
 		damage(!half_life)
 	else:
-		print("Win")
-		AudioManager.play("roundWin")
+#		print("Win")
+		player.win()
+		AudioManager.play("roundWin",0,40)
 		ScoreManager.incr_score()
 		heal()
 
@@ -88,7 +90,7 @@ func game_over():
 	in_game = false
 	SceneManager.main.get_node("Background/Video").play()
 	var colorRect = SceneManager.main.get_node("Background/ColorRect")
-	colorRect.color = Color(0,0,0,0)
+	colorRect.modulate = Color(0,0,0,0)
 	game.get_node("Hands").visible = false
 	await TimeManager.sleep_beat(1.0)
 	AudioManager.play("glass/glassBreak1")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ik8756p4owml"]
+[gd_scene load_steps=14 format=3 uid="uid://ik8756p4owml"]
 
 [ext_resource type="Script" path="res://scripts/hand.gd" id="1_q2bxk"]
 [ext_resource type="Texture2D" uid="uid://dsa4hhtq4dq3d" path="res://sprites/hand/hand.png" id="2_agnfb"]
+[ext_resource type="Texture2D" uid="uid://buv3b3uxqfi3i" path="res://sprites/Crown.png" id="3_2g4oj"]
 [ext_resource type="PackedScene" uid="uid://dkpmwy4w6o5xw" path="res://scenes/finger.tscn" id="3_re1fy"]
 [ext_resource type="Texture2D" uid="uid://c0tjnso8tahnq" path="res://sprites/hand/thumbUnfolded.png" id="4_k27tv"]
 [ext_resource type="Texture2D" uid="uid://drxi7y22ve1bb" path="res://sprites/hand/thumbFolded.png" id="5_8mxu0"]
@@ -11,9 +12,22 @@
 [ext_resource type="Texture2D" uid="uid://c2vnaljk5tqog" path="res://sprites/hand/ringFolded.png" id="9_03yku"]
 [ext_resource type="Texture2D" uid="uid://2r60doi8sr3e" path="res://sprites/hand/pinkyUnfolded.png" id="10_yrc8p"]
 [ext_resource type="Texture2D" uid="uid://ch2oxghtbbnl6" path="res://sprites/hand/pinkyFolded.png" id="11_4l3wr"]
+[ext_resource type="Texture2D" uid="uid://dggw6nhkbq7gs" path="res://sprites/J1.png" id="12_ipucp"]
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_q2bxk")
+
+[node name="Player" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-234, 149)
+scale = Vector2(3.85, 3.85)
+texture = ExtResource("12_ipucp")
+
+[node name="Crown" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-63, -263)
+scale = Vector2(5.03, 5.03)
+texture = ExtResource("3_2g4oj")
 
 [node name="Anchor" type="Node2D" parent="."]
 rotation = -0.785398

@@ -5,12 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cutdm2mo26les" path="res://sprites/pictograms/next.png" id="3_0d8i7"]
 [ext_resource type="FontFile" uid="uid://b24ukui1wgw4e" path="res://font/c-carre-4px.ttf" id="3_jl08y"]
 [ext_resource type="Texture2D" uid="uid://nel0o1fnd02x" path="res://sprites/pictograms/bell.png" id="3_y1be2"]
+[ext_resource type="LabelSettings" uid="uid://cljw4u6wgipkc" path="res://font/round_label_settings.tres" id="5_aobqn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0v0v8"]
-font = ExtResource("3_jl08y")
-font_size = 60
-
-[sub_resource type="LabelSettings" id="LabelSettings_280h7"]
 font = ExtResource("3_jl08y")
 font_size = 60
 
@@ -107,12 +104,12 @@ grow_horizontal = 0
 
 [node name="Count" type="Label" parent="Control/Round"]
 layout_mode = 0
-offset_left = -143.0
-offset_top = 12.0
-offset_right = 97.0
-offset_bottom = 98.0
+offset_left = -154.0
+offset_top = 13.0
+offset_right = 86.0
+offset_bottom = 99.0
 text = "0"
-label_settings = SubResource("LabelSettings_280h7")
+label_settings = ExtResource("5_aobqn")
 horizontal_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Round"]

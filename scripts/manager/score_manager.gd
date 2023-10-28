@@ -5,7 +5,6 @@ var new_score_label
 var in_score
 
 var score = 0
-var top = [0,0,0,0,0]
 var top_node
 var top_score_scene
 var name_node
@@ -81,7 +80,7 @@ func set_top():
 	scores_matrix.reverse()
 #	print(scores_matrix)
 	
-	for i in range(min(8,scores_matrix.size())):
+	for i in range(min(7,scores_matrix.size())):
 		if(int(scores_matrix[i][1]) > 0):
 			add_top(scores_matrix[i])
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bad213sob0vs"]
+[gd_scene load_steps=7 format=3 uid="uid://bad213sob0vs"]
 
 [ext_resource type="Texture2D" uid="uid://xwnpmu2q03vi" path="res://sprites/hearts/heartFull.png" id="1_6epp3"]
 [ext_resource type="Script" path="res://scripts/heart.gd" id="2_6bjc6"]
 [ext_resource type="Texture2D" uid="uid://db2sdw38r5cgk" path="res://sprites/hearts/heartEmpty.png" id="3_ylhn1"]
 [ext_resource type="Texture2D" uid="uid://djtm8tinc5q6c" path="res://sprites/hearts/heartBroken.png" id="4_q3ofo"]
 [ext_resource type="Texture2D" uid="uid://d0t6x57rvgrde" path="res://sprites/hearts/heartHalfBroken.png" id="5_mo40d"]
+[ext_resource type="Texture2D" uid="uid://cg8umjpvd8c1d" path="res://sprites/hearts/heartHealing.png" id="6_tet3m"]
 
 [node name="Heart" type="Control"]
 custom_minimum_size = Vector2(20, 0)
@@ -15,6 +16,7 @@ empty = ExtResource("3_ylhn1")
 broken = ExtResource("4_q3ofo")
 full = ExtResource("1_6epp3")
 half = ExtResource("5_mo40d")
+restore = ExtResource("6_tet3m")
 
 [node name="Texture" type="TextureRect" parent="."]
 layout_mode = 0

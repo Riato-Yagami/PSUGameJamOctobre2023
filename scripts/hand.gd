@@ -26,13 +26,29 @@ var fingers = {
 }
 
 @onready var anchor = $Anchor
+@onready var player_sprite = $Player
+@onready var crown = $Crown
 
+const FADE_SPEED = 0.2
+
+func win():
+	crown.visible = true
+	await TimeManager.sleep_beat(2)
+	crown.visible = false
+	
+func show_player_sprite():
+	player_sprite.modulate = Color(1,1,1,1)
+	
 func _ready():
 	figure = FigureManager.get_figure(fingers)
 	set_figure(figure)
 	
 func _process(delta):
 	if(GameManager.in_game): restore_rotation(delta)
+	
+	if(player_sprite.modulate.a > 0):
+		player_sprite.modulate.a -= delta * FADE_SPEED
+	else: player_sprite.modulate.a = 0
 
 func fold(finger):
 	fingers[finger] = true
