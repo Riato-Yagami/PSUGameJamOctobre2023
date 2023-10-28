@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cutdm2mo26les"
-path="res://.godot/imported/nTurnsAway.png-0e865e4050bba3f65dcd64fedb197eab.ctex"
+uid="uid://b306oxbtm3aah"
+path="res://.godot/imported/previous.png-5769ba476d277d6ab9050bfc4f4ba7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pictograms/nTurnsAway.png"
-dest_files=["res://.godot/imported/nTurnsAway.png-0e865e4050bba3f65dcd64fedb197eab.ctex"]
+source_file="res://sprites/pictograms/previous.png"
+dest_files=["res://.godot/imported/previous.png-5769ba476d277d6ab9050bfc4f4ba7db.ctex"]
 
 [params]
 

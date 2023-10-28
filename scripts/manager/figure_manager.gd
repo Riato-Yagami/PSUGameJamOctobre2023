@@ -15,7 +15,7 @@ var playoff_matrix = [
 ]
 
 var enemy_figures = []
-var enemy_figures_count = 100
+var enemy_figures_count = 400
 
 func get_figure(fingers):
 	var simplified_array = []
@@ -61,5 +61,6 @@ func generate_enemy_figures():
 		enemy_figures.append(figures.keys().pick_random())
 		
 func get_enemy_figure(round):
+	round %= (enemy_figures.size() - 1)
 	return enemy_figures[round]
 	

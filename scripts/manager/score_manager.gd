@@ -24,6 +24,7 @@ func init():
 	score_node = SceneManager.scene_node.get_node("Score")
 	
 	name_node = score_node.get_node("Control/Name")
+	name_node.text = player_name
 	new_score_label = score_node.get_node("Control/NewScore")
 	top_node = score_node.get_node("Control/Top/TopGrid")
 	top_score_scene = load("res://scenes/topScore.tscn")

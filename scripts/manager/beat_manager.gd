@@ -3,8 +3,13 @@ extends Node
 var beat = 0
 const FIRST_BEAT = 4
 
-const INITIAL_BPM = 1200.0
-var bpm_acceleration = 10
+const INITIAL_BPM = 60.0
+const INITIAL_ACCELERATION = 5
+var bpm_acceleration = 5
+
+var SOFT_CAP_1 = 120
+var SOFT_CAP_2 = 210
+
 var bpm = 120.0
 var frequency = 0.0
 
@@ -14,6 +19,7 @@ var timer = 0.0
 #	set_bpm(bpm)
 	
 func init():
+	bpm_acceleration = INITIAL_ACCELERATION
 	beat = FIRST_BEAT
 	set_bpm(INITIAL_BPM)
 	
@@ -54,6 +60,8 @@ func new_beat():
 	
 func increase_bpm():
 	set_bpm(bpm + bpm_acceleration)
-	print(bpm)
+	if(bpm == SOFT_CAP_1 or bpm == SOFT_CAP_2):
+		print(bpm)
+		bpm_acceleration -=2
 
 	

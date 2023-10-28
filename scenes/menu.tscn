@@ -1,28 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://cghjbbl3xcfgo"]
+[gd_scene load_steps=14 format=3 uid="uid://cghjbbl3xcfgo"]
 
+[ext_resource type="Texture2D" uid="uid://b306oxbtm3aah" path="res://sprites/pictograms/previous.png" id="1_icgmj"]
 [ext_resource type="Texture2D" uid="uid://chp4j4pk8yjwb" path="res://sprites/pictograms/scroll.png" id="1_oy4sq"]
 [ext_resource type="LabelSettings" uid="uid://ep2gatumibf5" path="res://font/menu_label_settings.tres" id="2_h6ytb"]
+[ext_resource type="Texture2D" uid="uid://o8m2eltkjtgc" path="res://sprites/pictograms/scrollHalf.png" id="2_ky74o"]
 [ext_resource type="PackedScene" uid="uid://ik8756p4owml" path="res://scenes/hand.tscn" id="3_373ga"]
+[ext_resource type="Texture2D" uid="uid://cutdm2mo26les" path="res://sprites/pictograms/next.png" id="3_y47eu"]
+[ext_resource type="Texture2D" uid="uid://b1eydou85vjvs" path="res://sprites/pictograms/repeat.png" id="4_2eida"]
 [ext_resource type="Texture2D" uid="uid://daj7ec5kj4mat" path="res://sprites/buttons/A.png" id="4_nc7t4"]
 [ext_resource type="Texture2D" uid="uid://dn80sma3kxoeu" path="res://sprites/buttons/LB.png" id="5_2sfca"]
 [ext_resource type="Texture2D" uid="uid://kc8an7rh77kc" path="res://sprites/buttons/LT.png" id="6_0phan"]
 [ext_resource type="Texture2D" uid="uid://dxuhqua0tx2ot" path="res://sprites/buttons/RB.png" id="7_eck0i"]
+[ext_resource type="LabelSettings" uid="uid://d3idgyhxi6au7" path="res://font/tuto_label_settings.tres" id="7_sl5ix"]
 [ext_resource type="Texture2D" uid="uid://b3y6lebwn5xy2" path="res://sprites/buttons/RT.png" id="8_vqft8"]
 
 [node name="Menu" type="Node"]
 
 [node name="Pictograms" type="Node2D" parent="."]
+position = Vector2(-188, 2)
 scale = Vector2(9, 9)
 
 [node name="Background" type="Sprite2D" parent="Pictograms"]
 texture = ExtResource("1_oy4sq")
 
+[node name="Half" type="Sprite2D" parent="Pictograms"]
+position = Vector2(68.4444, 0)
+texture = ExtResource("2_ky74o")
+
+[node name="Icons" type="Node2D" parent="Pictograms/Half"]
+position = Vector2(-12.7778, 5.22222)
+scale = Vector2(7.92, 7.92)
+
+[node name="Repeat" type="Sprite2D" parent="Pictograms/Half/Icons"]
+position = Vector2(0, -0.757576)
+scale = Vector2(0.111111, 0.111111)
+texture = ExtResource("4_2eida")
+
+[node name="Next" type="Sprite2D" parent="Pictograms/Half/Icons"]
+position = Vector2(-0.359707, -2.99719)
+scale = Vector2(0.111111, 0.111111)
+texture = ExtResource("3_y47eu")
+
+[node name="Previous" type="Sprite2D" parent="Pictograms/Half/Icons"]
+position = Vector2(-0.210438, 1.45904)
+scale = Vector2(0.111111, 0.111111)
+texture = ExtResource("1_icgmj")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 19.0
-offset_right = 40.0
-offset_bottom = 59.0
+offset_left = -188.0
+offset_top = 21.0
+offset_right = -148.0
+offset_bottom = 61.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -35,8 +65,36 @@ T O   P L A Y"
 label_settings = ExtResource("2_h6ytb")
 horizontal_alignment = 1
 
+[node name="Next" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = -133.0
+offset_right = 997.0
+offset_bottom = -89.0
+text = "N E X T  E N E M Y  
+T U R N"
+label_settings = ExtResource("7_sl5ix")
+
+[node name="Repeat" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 43.0
+offset_right = 976.0
+offset_bottom = 87.0
+text = "R E P E A T   T U R N"
+label_settings = ExtResource("7_sl5ix")
+
+[node name="Previous" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 181.0
+offset_right = 995.0
+offset_bottom = 225.0
+text = "P R E V I O U S"
+label_settings = ExtResource("7_sl5ix")
+
 [node name="Hand" parent="." instance=ExtResource("3_373ga")]
-position = Vector2(92, 53)
+position = Vector2(-96, 55)
 scale = Vector2(1.13, 1.13)
 
 [node name="Buttons" type="Node2D" parent="Hand"]
@@ -63,3 +121,7 @@ texture = ExtResource("5_2sfca")
 [node name="Lt" type="Sprite2D" parent="Hand/Buttons"]
 position = Vector2(-74.9206, 0)
 texture = ExtResource("6_0phan")
+
+[node name="Hand2" parent="." instance=ExtResource("3_373ga")]
+position = Vector2(410.36, -148.64)
+scale = Vector2(0.2, 0.2)
